@@ -1,10 +1,10 @@
 :root {
-    --color-1: #ffffff;
-    --color-2: #faf9f6;
-    --color-3: #ffb6c1;
-    --color-4: #d87093;
-    --color-5: #f7cac9;
-    --color-6: #e8e8e8;
+    --color-1: #eb9ac0;
+    --color-2: #f3aacb;
+    --color-3: #f7bfd8;
+    --color-4: #fbd5e5;
+    --color-5: #f9e7ef;
+    --color-6: #a80070;
     --color-7: #f8f7f1;
 
     --image-bg: url("https://cdn.pixabay.com/photo/2016/11/20/09/12/castle-1842324_1280.jpg");
@@ -19,150 +19,92 @@
 body {
     margin: 0;
     padding: 0;
-    /* font-family: fuente-boda; */
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
+    width: 100vw;
+    background-color: var(--color-5);
+    color: var(--color-6);
 }
 
-body * {
-    transition: 0.5s;
-}
-
-h1,
-h2 {
-    color: var(--color-4);
-}
-
-.test {
-    border: 1px solid var(--color-border-1);
+#main {
+    display: grid;
+    grid-template-rows: 150px auto;
+    height: 100%;
 }
 
 #main-image {
-    grid-row: 1 / 4;
-    grid-column: 1;
-    background-image: url('./assets/images/462454054_1075015137513984_8776497995667361868_n.jpeg');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+        max-width: 100%;
+    }
+
+    img:hover {
+        border-radius: 0;
+    }
 }
 
-#main-wellcome {
-    background-image: var(--image-bg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.bg-img {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 380px;
+    opacity: 20%;
+}
+
+#wellcome-text,
+#dress,
+#locations{
+    width: auto;
+    margin: 15px;
+}
+
+.location {
+    margin-top: 20px;
     
-    grid-row: 1;
-    grid-column: 2;
-    text-align: left;
-    vertical-align: middle;
-    height: 100%;
-    padding: 50px;
+    .location-name-time {
+        display: grid;
+        grid-template-columns: auto 30%;
+    }
+
+    h3 {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .location-map {
+        width: 100%;
+        margin: auto;
+        height: 250px;
+    }
+}
+
+#wellcome-text {
+    width: 100%;
+    text-wrap: warp;
+    width: auto;
 
     h1 {
         text-align: center;
+        padding: 0;
     }
-
-    b {
-        color: var(--color-4);
-    }
-}
-
-#main-meet {
-    grid-row: 2;
-    grid-column: 2;
-    padding: 2px;
-
-    img {
-        width: 80%;
-    }
-
-    .meets {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .meet {
-        text-align: center;
-    }
-}
-
-#main-menu {
-    display: none;
-    grid-row: 3;
-    grid-column: 2;
-}
-
-#main-menu .menu-items {
-    margin: auto;
-    margin-top: 30px;
-    max-width: fit-content;
-}
-
-.meet-data {
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    justify-self: center;
-}
-
-.meet-datetime {
-    margin-right: 5px;
-}
-
-.menu-items {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 30px;
-}
-
-.menu-item {
-    background-color: var(--color-4);
-    padding: 20px;
-    margin: 5px;
-    width: 100px;
-    border-radius: 10px;
-    border: 3px solid var(--color-3);
-    transition: 0.2s;
-}
-
-.menu-item:hover {
-    cursor: pointer;
-    background-color: var(--color-5);
-}
-
-.menu-item-text {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-/* MOVILES */
-@media only screen and (max-width: 600px) {
-    .main {
-        display: grid;
-        grid-template-columns: 30% auto;
-        grid-template-rows: 50% 30% auto;
-        height: 100%;
-        width: 100%;
-    }
-}
-
-/* TABLETS */
-@media only screen and (min-width: 600px) {
     
-}
+    h1,
+    b {
+        color: var(--color-1);
 
-/* ORDENADORES */
-@media only screen and (min-width: 768px) {
-    .main {
-        display: grid;
-        grid-template-columns: 30% auto;
-        grid-template-rows: 50% 30% auto;
-        height: 100%;
-        width: 100%;
     }
 }
